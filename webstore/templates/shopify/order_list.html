@@ -7,10 +7,9 @@
    <ul class="list-group">
 
       {% for order in order_list%}
-
-
             <li class="list-group-item">
-          <a href="{% url 'order-detail' pk=order.id %}">      <span class="badge">Consultar</span></a>
+            <a href="{% url 'order-detail' pk=order.id %}">      
+            <span class="badge">Consultar</span></a>
                 {{ order.id }}
             </li>
       {% endfor %}

@@ -140,6 +140,7 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.SessionAuthentication',
     )
 }
+
 ALLOWED_HOSTS=['shopify-5.herokuapp.com']
 
 STATIC_URL = '/static/'
