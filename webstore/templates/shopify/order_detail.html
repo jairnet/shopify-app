@@ -3,6 +3,10 @@
 {% block content %}
 
   <h1>head Order Detail: {{ order.title }}</h1>
+    <p><strong>Email:</strong> {{ order.email }}</p>
+    <p><strong>Total Price:</strong> {{ order.total_price }}</p>
+    <p><strong>Total Discounts:</strong> {{ order.total_discounts }}</p>
+    <p><strong>Order Number:</strong> {{ order.number }}</p>
 
   <div style="margin-left:20px;margin-top:20px">
     <h4>Items</h4>
