@@ -9,7 +9,7 @@ with open('pruebafinal.txt','rb') as f:
 
 
 
-r = requests.post('http://190.159.249.74:8000/orders/', data=data)
+r = requests.post('https://shopify-5.herokuapp.com/orders/', data=data)
 print r.status_code
 print r.json()
 
