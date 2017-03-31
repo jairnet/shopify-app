@@ -12,7 +12,12 @@
     <h4>Items</h4>
 
     {% for item in order.line_items.all %}
-        <p class="text-muted"><strong> Id: A, A</strong> {{item.id}}</p>
+        <p class="text-muted"><strong> ID: </strong> {{item.id}}</p>
+        <p class="text-muted"><strong> Titulo: </strong> {{item.title }}</p>
+        <p class="text-muted"><strong> Quantity: </strong> {{item.quantity }}</p>
+        <p class="text-muted"><strong> Vendor: </strong> {{item.vendor }}</p>
+        <p class="text-muted"><strong> Product Id : </strong> {{item.product_id }}</p>
+        <p class="text-muted"><strong> Total Discount: </strong> {{item.total_discount }}</p>
     {% endfor %}
   </div>
 
