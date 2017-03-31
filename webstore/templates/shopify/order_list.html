@@ -10,14 +10,8 @@
             <li class="list-group-item">
             <a href="{% url 'order-detail' pk=order.id %}">      
             <span class="badge">Consultar</span></a>
-                {{ order.id }}
-                {{ order.email }}
-                {{ order.total_price }}
-                {{ order.total_discounts }}
-                {{ order.number }}
             </li>
       {% endfor %}
-
     </ul>
     {% else %}
       <p>There are no Order  in this moment.</p>
