@@ -12,7 +12,6 @@ from rest_framework import status
 import json
 import pickle
 
-
 class PublicEndpoint(permissions.BasePermission):
     def has_permission(self, request, view):
         return True
@@ -37,20 +36,12 @@ class OrderViewSet(viewsets.ModelViewSet):
     permission_classes = (PublicEndpoint,)
 
     def create(self, request, *args, **kwargs):
-        #{"order_number": "222222222", "csrfmiddlewaretoken": "oZHZx5eA5RqEvbHTfIKM4kth1cihJktjp16JZAmdjLorZFZFfXerEhwpAaofoiZS", "total_price": "5555555555555", "total_discounts": "5555555555555", "email": "5"}
-
-        #for k,v in request.data.iteritems():
-        #    f.write("%s:%s"%(k,v)+"\n")
-        # depurador
-        #with open('pruebafinal.txt', 'wb') as f:
-        #    pickle.dump(request.data, f)
         serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         self.perform_create(serializer)
         headers = self.get_success_headers(serializer.data)
 
         return Response(serializer.data, status=status.HTTP_201_CREATED, headers=headers)
-
 
 class ItemViewSet(viewsets.ModelViewSet):
     queryset = Item.objects.all()

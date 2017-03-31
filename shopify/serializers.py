@@ -13,18 +13,14 @@ class ShippingSerializer(serializers.ModelSerializer):
         model = Shipping
         fields = "__all__"
 
-
 class OrderSerializer(serializers.ModelSerializer):
     #shipping_address = ShippingSerializer(many=True, required=False)
     line_items=ItemSerializer(many=True)
-
 
     class Meta:
         model = Order
         fields = ['total_price','total_discounts','order_number','email','line_items']
     def create(self, validated_data):
-
-
         """
         Create and return a new `Snippet` instance, given the validated data.
         """
@@ -39,15 +35,6 @@ class OrderSerializer(serializers.ModelSerializer):
         for post in line_items:
             item=Item.objects.create(**post)
             instance.line_items.add(item)
-        # shipping_address = validated_data.pop('shipping_address')
-        # list_shi=[]
-        # for sh in shipping_address:
-        #     d=dict(sh)
-        #     shiping=Shipping(first_name=d['first_name'],address1=d['address1'],phone=d['phone'],city=d['city'],province=d['province'],country=d['country'])
-        #     shiping.save()
-        #
-        #     instance.shipping_address.add(shiping)
-
         instance.save()
 
         return instance
@@ -63,5 +50,3 @@ class OrderSerializer(serializers.ModelSerializer):
         instance.style = validated_data.get('style', instance.style)
         instance.save()
         return instance
-
-

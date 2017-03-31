@@ -1,6 +1,5 @@
 
 # -*- coding: cp1252 -*-
-
 from django.conf.urls import include, url
 from rest_framework import routers
 from shopify.views import OrderViewSet, ItemViewSet, ShippingViewSet, OrderDetailView, OrderListView
@@ -10,12 +9,9 @@ router.register(r'orders', OrderViewSet)
 router.register(r'items', ItemViewSet)
 router.register(r'shipping', ShippingViewSet)
 
-urlpatterns = [
-
+urlpatterns = 
+  [
   url(r'^', include(router.urls)),
   url(r'^list-orders/$', OrderListView.as_view(), name='order-list2'),
   url(r'^detalle/(?P<pk>\d+)/$', OrderDetailView.as_view(), name='order-detail'),
-
-
-
-]
+  ]
