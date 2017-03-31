@@ -141,7 +141,7 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.SessionAuthentication',
     )
 }
-ALLOWED_HOSTS=['store-555.herokuapp.com']
+ALLOWED_HOSTS=['shopify-5.herokuapp.com']
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.normpath(os.path.join(PROJECT_PATH, 'static/'))
